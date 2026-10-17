@@ -1,0 +1,114 @@
+{
+    "projectId": "6ad255e9000f1643bfd3",
+    "endpoint": "https://fra.cloud.appwrite.io/v1",
+    "tablesDB": [
+        {
+            "$id": "learn_db",
+            "name": "learn_db",
+            "enabled": true
+        }
+    ],
+    "tables": [
+        {
+            "$id": "chapters",
+            "databaseId": "learn_db",
+            "name": "chapters",
+            "enabled": true,
+            "columns": [
+                {
+                    "key": "subject",
+                    "type": "varchar",
+                    "size": 50,
+                    "required": true
+                },
+                {
+                    "key": "level",
+                    "type": "varchar",
+                    "size": 50,
+                    "required": true
+                },
+                {
+                    "key": "title",
+                    "type": "varchar",
+                    "size": 255,
+                    "required": true
+                },
+                {
+                    "key": "description",
+                    "type": "varchar",
+                    "size": 500,
+                    "required": false
+                },
+                {
+                    "key": "content",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "key": "video_url",
+                    "type": "varchar",
+                    "size": 255,
+                    "required": false
+                },
+                {
+                    "key": "order",
+                    "type": "integer",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "$id": "profiles",
+            "databaseId": "learn_db",
+            "name": "profiles",
+            "enabled": true,
+            "columns": [
+                {
+                    "key": "email",
+                    "type": "varchar",
+                    "size": 255,
+                    "required": true
+                },
+                {
+                    "key": "full_name",
+                    "type": "varchar",
+                    "size": 255,
+                    "required": false
+                },
+                {
+                    "key": "role",
+                    "type": "varchar",
+                    "size": 50,
+                    "required": false,
+                    "default": "student"
+                }
+            ]
+        },
+        {
+            "$id": "chapter_progress",
+            "databaseId": "learn_db",
+            "name": "chapter_progress",
+            "enabled": true,
+            "columns": [
+                {
+                    "key": "student_id",
+                    "type": "varchar",
+                    "size": 100,
+                    "required": true
+                },
+                {
+                    "key": "chapter_id",
+                    "type": "varchar",
+                    "size": 100,
+                    "required": true
+                },
+                {
+                    "key": "viewed_at",
+                    "type": "varchar",
+                    "size": 50,
+                    "required": true
+                }
+            ]
+        }
+    ]
+}
